@@ -1,0 +1,73 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using RenderHeads.Media.AVProVideo;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class Controll_Video2 : MonoBehaviour {
+    public MediaPlayer  _media;
+
+    public Text textControll;
+
+  
+
+    public Slider slider;
+    public float sceond;
+   
+    // Update is called once per frame
+    public void Play_Pause () {
+        if (_media.Control.IsPlaying () ) {
+            _media.Pause ();
+            textControll.text = "Play";
+
+        } else {
+            _media.Play ();
+            textControll.text = "Pause";
+        }
+
+    }
+   
+    public void Restart(){
+        //Debug.Log (slider.value);
+        _media.Control.Seek (0);
+        slider.value = 0;
+    }
+    public void Exit(){
+
+        _media.Stop ();
+        _media.Control.Seek (0);
+        textControll.text = "Play";
+        SceneManager.LoadScene ("Main");
+       
+        slider.value = 0;
+
+    }
+
+
+   
+
+ 
+
+    public void Transaction(float valuetime){
+        Debug.Log (slider.value);
+        //slider.value = .5f;
+        // _media.Control.Seek (0.5f);
+
+        _media.Control.Seek(slider.value*valuetime);
+    }
+    void Update(){
+        if (slider.value >=10) {
+            slider.value = 0;
+
+        }
+
+
+
+
+
+
+
+
+    }
+}
