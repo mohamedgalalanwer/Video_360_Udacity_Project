@@ -11,6 +11,9 @@ time 4 hours
 
 challenging  Choose your own adventure - add in at least one branch to the story where users can choose which path to take
 
+This project deleted one file which is  (IOS)Exists in (Asset-->Plugins--->iOS) This plugin follows the GoogleSDK
+
+
 
 https://www.youtube.com/watch?v=3jIPSxAAjuU
 
